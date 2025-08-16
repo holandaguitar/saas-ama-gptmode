@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AMA Design System - Associação dos Músicos Araguatinenses
+Paleta de cores oficial:
+- Vermelho principal: #E30613
+- Azul marinho: #1E2240
+- Branco: #FFFFFF
+- Cinza claro: #F5F5F5
+*/
+
+@layer base {
+  :root {
+    /* AMA Brand Colors */
+    --ama-red: 350 95% 48%;        /* #E30613 */
+    --ama-navy: 232 34% 12%;       /* #1E2240 */
+    --ama-white: 0 0% 100%;        /* #FFFFFF */
+    --ama-gray: 0 0% 96%;          /* #F5F5F5 */
+    
+    /* System Colors based on AMA palette */
+    --background: 0 0% 100%;
+    --foreground: 232 34% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 232 34% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 232 34% 12%;
+
+    --primary: 350 95% 48%;         /* AMA Red */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;          /* AMA Gray */
+    --secondary-foreground: 232 34% 12%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 232 20% 45%;
+
+    --accent: 350 95% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 94%;
+    --ring: 350 95% 48%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar colors - AMA Navy theme */
+    --sidebar-background: 232 34% 12%;     /* AMA Navy */
+    --sidebar-foreground: 0 0% 100%;       /* White text */
+    --sidebar-primary: 350 95% 48%;        /* AMA Red */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 232 34% 18%;         /* Lighter navy for hover */
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 232 34% 20%;
+    --sidebar-ring: 350 95% 48%;
+
+    /* Custom gradients */
+    --gradient-ama: linear-gradient(135deg, hsl(var(--ama-red)), hsl(var(--ama-navy)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--ama-gray)), hsl(var(--background)));
+    
+    /* Shadows */
+    --shadow-ama: 0 10px 30px -10px hsl(var(--ama-red) / 0.2);
+    --shadow-card: 0 4px 12px -2px hsl(var(--ama-navy) / 0.1);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+  }
+  
+  /* AMA Custom Classes */
+  .bg-gradient-ama {
+    background: var(--gradient-ama);
+  }
+  
+  .shadow-ama {
+    box-shadow: var(--shadow-ama);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  /* Music note decorative elements */
+  .music-note::before {
+    content: "♪";
+    opacity: 0.1;
+    position: absolute;
+    font-size: 2rem;
+    color: hsl(var(--ama-red));
+  }
+}
